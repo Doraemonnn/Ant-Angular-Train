@@ -1,0 +1,41 @@
+.gutter-example {
+  background: #fff;
+  margin: 0 0 24px;
+  padding: 20px 0 10px;
+
+  .gutter-row {
+    .first-row {
+      margin-top: 7px;
+      margin-bottom: 20px;
+      height: 40px;
+      text-indent: 10px;
+    }
+
+    img {
+      width: 30px;
+      vertical-align: middle;
+      margin-top: -8px;
+      margin-left: 27px;
+      margin-right: 8px;
+    }
+
+    .train {
+      cursor: pointer;
+
+      &:hover {
+        color: #108ee9;
+      }
+    }
+
+    .title {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .content {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+
+  <div nz-row class="mt">
+    <!-- 搜索框 -->
+    <div nz-col nzXs="16" nzSm="12" nzMd="24" nzLg="12" nzXl="12">
+      <nz-input-group nzSearch [nzSuffix]="suffixIconButton" style="width: 300px">
+        <input type="text" [(ngModel)]="searchContent" nz-input placeholder="搜索车号" (ngModelChange)="onSearch()">
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button nz-button nzType="primary" nzSearch (click)="onSearch()"><i nz-icon type="search"></i></button>
+      </ng-template>
+    </div>
+
+    <!-- 在线离线数 -->
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="12" class="statistic media-text">
+      <span>车辆总数：{{totalCount}}</span>
+      <span>在线列车数：{{onlineCount}}</span>
+    </div>
+  </div>
+</nz-card>
+
+<!-- 没有匹配结果时显示图片 -->
+<nz-card class="mt" *ngIf="searchLength==0">
+  <app-no-data></app-no-data>
+</nz-card>
+
+<!-- 列车卡片 -->
+<div class="gutter-example mt">
+  <div nz-row nzGutter="16">
+    <ng-container *ngFor="let item of trainList">
+      <div nz-col class="gutter-row" nzXs="24" nzSm="24" nzMd="12" nzLg="8" nzXl="6" *ngIf="item.show==true">
+        <div class="gutter-box">
+          <app-monitor-card [item]="item"></app-monitor-card>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

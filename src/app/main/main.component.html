@@ -1,0 +1,29 @@
+<nz-layout>
+  <!-- 左侧菜单 -->
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" [nzWidth]="250">
+    <div class="logo">
+    </div>
+    <app-side-menu [isCollapsed]="isCollapsed"></app-side-menu>
+  </nz-sider>
+
+  <!-- 右侧区域 -->
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
+      <!-- 用户信息 -->
+      <app-user></app-user>
+    </nz-header>
+
+    <nz-content>
+      <!-- 页面 -->
+      <div style="margin: 24px 24px 0; min-height: 360px;">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+
+<ng-template #trigger>
+  <i nz-icon type="up"></i>
+</ng-template>

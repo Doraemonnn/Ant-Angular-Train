@@ -1,0 +1,21 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+</nz-card>
+
+<nz-card class="mt">
+  <!-- 加载动画 -->
+  <div class="loading" *ngIf="loading === true">
+    <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+  </div>
+
+  <!-- 健康状况 -->
+  <div nz-row nzGutter="16">
+    <div nz-col class="gutter-row" nzXs="24" nzSm="24" nzMd="12" nzLg="8" nzXl="8">
+      <app-health-echart [pieList]="pieList"></app-health-echart>
+    </div>
+    <div nz-col class="gutter-row" nzXs="24" nzSm="24" nzMd="12" nzLg="16" nzXl="16">
+      <app-health-list [healthList]="healthList"></app-health-list>
+    </div>
+  </div>
+</nz-card>

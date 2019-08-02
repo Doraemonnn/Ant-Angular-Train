@@ -1,0 +1,20 @@
+<div class="train-state">
+  <div class="gutter-example">
+    <div nz-row nzGutter="16">
+      <div nz-col class="gutter-row" nzXs="8" nzSm="6" nzMd="6" nzLg="4" nzXl="4" *ngFor="let item of healthList">
+        <div class="wrap" (click)="chooseTrain(item)">
+          <div class="circle" [ngClass]="{'typeA': (clickItem == item.trainNo)&&(item.healthStatus==0), 
+          'typeB':(clickItem == item.trainNo)&&(item.healthStatus==1), 
+          'typeC':(clickItem == item.trainNo)&&(item.healthStatus==2), 
+          'typeD':(clickItem == item.trainNo)&&(item.healthStatus==3)}">
+            <img src="../../../assets/images/icon_trainHealth_green.png" *ngIf="item.healthStatus==0">
+            <img src="../../../assets/images/icon_metro_grade2.png" *ngIf="item.healthStatus==1">
+            <img src="../../../assets/images/icon_trainHealth_orange.png" *ngIf="item.healthStatus==2">
+            <img src="../../../assets/images/icon_trainHealth_red.png" *ngIf="item.healthStatus==3">
+          </div>
+        </div>
+        <p>{{item.trainNo}}</p>
+      </div>
+    </div>
+  </div>
+</div>

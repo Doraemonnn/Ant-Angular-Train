@@ -1,0 +1,37 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+</nz-card>
+
+<!-- 表格 -->
+<nz-card class="mt">
+  <nz-table #basicTable nzBordered nzShowSizeChanger [nzFrontPagination]="false" [nzData]="tableData"
+    [nzLoading]="loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize"
+    (nzPageIndexChange)="changePageIndex()" (nzPageSizeChange)="changePageSize()">
+    <thead>
+      <tr>
+        <th>车型</th>
+        <th>车号</th>
+        <th>车厢</th>
+        <th>故障码</th>
+        <th>故障名称</th>
+        <th>发生时间</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.train_type }}</td>
+        <td>{{ data.train_no }}</td>
+        <td>{{ data.train_coach }}</td>
+        <td>{{ data.fault_code }}</td>
+        <td>{{ data.fault_name }}</td>
+        <td>{{ data.fault_time }}</td>
+        <td>
+          <nz-badge nzStatus="success" nzText="车载消除" *ngIf="data.fault_status==1"></nz-badge>
+          <nz-badge nzStatus="warning" nzText="未消除" *ngIf="data.fault_status==0"></nz-badge>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

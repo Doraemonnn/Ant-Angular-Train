@@ -1,0 +1,37 @@
+p {
+  line-height: 30px;
+  text-align: center;
+}
+
+.wrap {
+  text-align: center;
+
+  .circle {
+    display: inline-block;
+    padding: 3px;
+    border: solid 2px #fff;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &.typeA {
+      border: solid 2px #52c41a;
+    }
+
+    &.typeB {
+      border: solid 2px #fabc16;
+    }
+
+    &.typeC {
+      border: solid 2px #ff8000;
+    }
+
+    &.typeD {
+      border: solid 2px #f5222d;
+    }
+
+    img {
+      width: 29px;
+      height: 29px;
+    }
+  }
+}

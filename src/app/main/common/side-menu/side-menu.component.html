@@ -1,0 +1,52 @@
+<ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+
+  <ng-container *ngFor="let item of menuList">
+    <!-- 一级菜单 -->
+    <ng-container *ngIf="(!item.meta.hide)&&(!item.children)">
+      <li nz-menu-item [routerLink]="['/'+item.path]">
+        <span>
+          <i nz-icon [type]="item.meta.icon"></i>
+          <span class="nav-text">{{item.meta.name}}</span>
+        </span>
+      </li>
+    </ng-container>
+
+    <!-- 二级父菜单 -->
+    <ng-container *ngIf="(!item.meta.hide)&&(item.children)">
+      <li nz-submenu>
+        <span title>
+          <i nz-icon [type]="item.meta.icon"></i>
+          <span class="nav-text">{{item.meta.name}}</span>
+        </span>
+
+        <!-- 二级子菜单 -->
+        <ul>
+          <ng-container *ngFor="let childItem of item.children">
+            <li nz-menu-item [routerLink]="['/'+childItem.path]" *ngIf="(!childItem.meta.hide)&&(!childItem.children)">
+              <span>
+                <i nz-icon [type]="childItem.meta.icon"></i>
+                <span class="nav-text">{{childItem.meta.name}}</span>
+              </span>
+            </li>
+
+            <!-- 三级菜单 -->
+            <li nz-submenu *ngIf="(!childItem.meta.hide)&&(childItem.children)">
+              <span title>
+                <i nz-icon [type]="childItem.meta.icon"></i>
+                <span class="nav-text">{{childItem.meta.name}}</span>
+              </span>
+              <ul>
+                <li nz-menu-item [routerLink]="['/'+thirdChildItem.path]" *ngFor="let thirdChildItem of childItem.children">
+                  <span>
+                    <i nz-icon [type]="thirdChildItem.meta.icon"></i>
+                    <span class="nav-text">{{thirdChildItem.meta.name}}</span>
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>

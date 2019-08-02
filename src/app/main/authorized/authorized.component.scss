@@ -1,0 +1,449 @@
+.animate-wrap {
+  height: 420px;
+}
+
+.animate-wrap .background,
+.animate-wrap .bubble,
+.animate-wrap .bubble-spot,
+.animate-wrap .octopus,
+.animate-wrap .octo-bubble,
+.animate-wrap .head,
+.animate-wrap .head-spot,
+.animate-wrap .mouth,
+.animate-wrap .eyes,
+.animate-wrap .iris,
+.animate-wrap .pupil,
+.animate-wrap .eyes-spot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.animate-wrap .octopus,
+.animate-wrap .iris,
+.animate-wrap .pupil {
+  left: 50%;
+  top: 50%;
+}
+
+.animate-wrap .background {
+  background: -webkit-linear-gradient(180deg, #2196f3, #042844);
+  background: -moz-linear-gradient(180deg, #2196f3, #042844);
+  background: -o-linear-gradient(180deg, #2196f3, #042844);
+  background: linear-gradient(180deg, #2196f3, #042844);
+  overflow: scroll;
+  background-color: #2196f3;
+  width: 280px;
+  height: 280px;
+  left: 50%;
+  top: 50%;
+  margin-left: -140px;
+  margin-top: -200px;
+  overflow: hidden;
+}
+
+.animate-wrap .background .bubble {
+  background-color: rgba(130, 196, 248, 0.6);
+  top: -100%;
+  border: 1px solid white;
+  animation-name: bubbleAnimation;
+  animation-timing-function: cubic-bezier(0.9, 0.2, 1, 1);
+  animation-iteration-count: infinite;
+}
+
+.animate-wrap .background .bubble .bubble-spot {
+  background-color: rgba(227, 242, 253, 0.35);
+  top: 10%;
+  left: 10%;
+}
+
+/* 章鱼 */
+
+.animate-wrap .background .octopus {
+  animation: octoAnimation infinite 6s;
+}
+
+.animate-wrap .background .octopus .octo-bubble {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 148.5px;
+  height: 143.4375px;
+  margin-left: -74.25px;
+  margin-top: -78.89063px;
+  border: 1px solid white;
+}
+
+.animate-wrap .background .octopus .octo-bubble .bubble-spot {
+  background-color: rgba(227, 242, 253, 0.35);
+  top: 10%;
+  left: 10%;
+  width: 74.25px;
+  height: 28.6875px;
+  transform: rotate(-25deg);
+  -o-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  -moz-transform: rotate(-25deg);
+  -webkit-transform: rotate(-25deg);
+}
+
+.animate-wrap .background .octopus .head {
+  background-color: #ff6238;
+  width: 135px;
+  height: 114.75px;
+  margin-left: -67.5px;
+  margin-top: -57.375px;
+}
+
+.animate-wrap .background .octopus .head .head-spot {
+  background-color: #ff420f;
+}
+
+.animate-wrap .background .octopus .head .head-spot-1 {
+  width: 10.8px;
+  height: 6.75px;
+  top: 34%;
+  left: 60%;
+}
+
+.animate-wrap .background .octopus .head .head-spot-2 {
+  width: 5.4px;
+  height: 3.375px;
+  top: 28%;
+  left: 52%;
+}
+
+.animate-wrap .background .octopus .head .eyes {
+  background-color: white;
+  border-width: 3px 6px 3px 6px;
+  top: 60%;
+  width: 24.3px;
+  height: 24.3px;
+  margin-left: -13.15px;
+  margin-top: -15.15px;
+}
+
+.animate-wrap .background .octopus .head .eyes .iris {
+  background-color: green;
+  width: 18.225px;
+  height: 18.225px;
+  margin-left: -9.1125px;
+  margin-top: -9.1125px;
+}
+
+.animate-wrap .background .octopus .head .eyes .iris .pupil {
+  background-color: black;
+  width: 9.477px;
+  height: 15.49125px;
+  margin-left: -4.7385px;
+  margin-top: -7.74563px;
+}
+
+.animate-wrap .background .octopus .head .eyes .iris .pupil .eyes-spot {
+  top: 0%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.65);
+  width: 7.10775px;
+  height: 7.10775px;
+}
+
+.animate-wrap .background .octopus .head .eyes-1 {
+  left: 26%;
+}
+
+.animate-wrap .background .octopus .head .eyes-2 {
+  left: 74%;
+}
+
+.animate-wrap .background .octopus .head .mouth {
+  background-color: #6b1700;
+  top: 70%;
+  left: 50%;
+  width: 24.3px;
+  height: 7.29px;
+  margin-left: -12.15px;
+  margin-top: -3.645px;
+  border-bottom: 3px solid #941f00;
+}
+
+.animate-wrap .background .octopus .tentacle {
+  position: absolute;
+  background: #ff6238;
+  width: 20.25px;
+  height: 97.5375px;
+  border-radius: 20.25px;
+  margin-left: -10.125px;
+}
+
+.animate-wrap .background .octopus .tentacle-1 {
+  animation: tentaclesAnimation-1 infinite 6s;
+  top: -9.75375px;
+  left: -24.3px;
+}
+
+.animate-wrap .background .octopus .tentacle-2 {
+  animation: tentaclesAnimation-2 infinite 6s;
+  top: 0px;
+}
+
+.animate-wrap .background .octopus .tentacle-3 {
+  animation: tentaclesAnimation-3 infinite 6s;
+  top: -14.63062px;
+  left: 24.3px;
+}
+
+/* 气泡 */
+
+.bubble--10 {
+  left: 10%;
+}
+
+.bubble--20 {
+  left: 20%;
+}
+
+.bubble--30 {
+  left: 30%;
+}
+
+.bubble--45 {
+  left: 45%;
+}
+
+.bubble--60 {
+  left: 60%;
+}
+
+.bubble--70 {
+  left: 70%;
+}
+
+.bubble:nth-child(1) {
+  animation-delay: 1s;
+  animation-duration: 2.2s;
+  width: 19.2px;
+  height: 19.2px;
+}
+
+.bubble:nth-child(1) .bubble-spot {
+  width: 6.4px;
+  height: 6.4px;
+}
+
+.bubble:nth-child(2) {
+  animation-delay: 2s;
+  animation-duration: 3.4s;
+  width: 22.4px;
+  height: 22.4px;
+}
+
+.bubble:nth-child(2) .bubble-spot {
+  width: 9.6px;
+  height: 9.6px;
+}
+
+.bubble:nth-child(3) {
+  animation-delay: 3s;
+  animation-duration: 4.6s;
+  width: 25.6px;
+  height: 25.6px;
+}
+
+.bubble:nth-child(3) .bubble-spot {
+  width: 12.8px;
+  height: 12.8px;
+}
+
+.bubble:nth-child(4) {
+  animation-delay: 4s;
+  animation-duration: 5.8s;
+  width: 28.8px;
+  height: 28.8px;
+}
+
+.bubble:nth-child(4) .bubble-spot {
+  width: 16px;
+  height: 16px;
+}
+
+.bubble:nth-child(5) {
+  animation-delay: 5s;
+  animation-duration: 7s;
+  width: 32px;
+  height: 32px;
+}
+
+.bubble:nth-child(5) .bubble-spot {
+  width: 19.2px;
+  height: 19.2px;
+}
+
+.bubble:nth-child(6) {
+  animation-delay: 6s;
+  animation-duration: 8.2s;
+  width: 35.2px;
+  height: 35.2px;
+}
+
+.bubble:nth-child(6) .bubble-spot {
+  width: 22.4px;
+  height: 22.4px;
+}
+
+.bubble:nth-child(7) {
+  animation-delay: 7s;
+  animation-duration: 9.4s;
+  width: 38.4px;
+  height: 38.4px;
+}
+
+.bubble:nth-child(7) .bubble-spot {
+  width: 25.6px;
+  height: 25.6px;
+}
+
+/* 动画 */
+
+@keyframes bubbleAnimation {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes octoAnimation {
+  0% {
+    top: 30%;
+  }
+  25% {
+    top: 70%;
+  }
+  50% {
+    top: 40%;
+  }
+  75% {
+    top: 60%;
+  }
+  100% {
+    top: 30%;
+  }
+}
+
+@keyframes tentaclesAnimation-1 {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes tentaclesAnimation-2 {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes tentaclesAnimation-3 {
+  0% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -webkit-transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+.auth-button {
+  margin: 20px auto 100px;
+  height: 36px !important;
+  display: block;
+}

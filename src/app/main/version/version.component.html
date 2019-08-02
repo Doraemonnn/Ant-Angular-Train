@@ -1,0 +1,53 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+</nz-card>
+
+<!-- 表格 -->
+<nz-card class="mt">
+  <nz-table #basicTable nzBordered nzShowSizeChanger [nzFrontPagination]="false" [nzData]="tableData"
+    [nzLoading]="loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize"
+    (nzPageIndexChange)="changePageIndex()" (nzPageSizeChange)="changePageSize()">
+    <thead>
+      <tr>
+        <th>车型</th>
+        <th>车号</th>
+        <th>版本内容</th>
+        <th>实际版本号</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.train_type }}</td>
+        <td>{{ data.train_no }}</td>
+        <td>{{ data.version_content }}</td>
+        <td>{{ data.version_current }}</td>
+        <td>{{ data.createtime }}</td>
+        <td>{{ data.update_time }}</td>
+        <td>
+          <nz-tag [nzColor]="'cyan'" *ngIf="data.versionStatus=='正常'">{{ data.versionStatus }}</nz-tag>
+          <nz-tag [nzColor]="'gold'" *ngIf="data.versionStatus=='异常'">{{ data.versionStatus }}</nz-tag>
+        </td>
+        <td>
+          <a (click)="seeVersion(data)">查看版本记录</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
+
+<!-- 版本记录 -->
+<nz-modal [(nzVisible)]="isVisible" nzTitle="当前版本记录" (nzOnCancel)="isVisible=false" (nzOnOk)="isVisible=false">
+  <nz-timeline>
+    <nz-timeline-item *ngFor="let item of versionLogData">
+      <div class="clearfix" style="width: 100%;">
+        <span class="fl" style="float: left; line-height: 20px;">{{item.version_current}}</span>
+        <span class="fr" style="float: right; line-height: 20px;">{{item.update_time}}</span>
+      </div>
+    </nz-timeline-item>
+  </nz-timeline>
+</nz-modal>

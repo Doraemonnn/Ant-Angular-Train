@@ -1,0 +1,19 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+</nz-card>
+
+<!-- 速度和网压 -->
+<div class="gutter-example mt">
+  <div nz-row nzGutter="16">
+    <!-- 速度 -->
+    <div nz-col class="gutter-rqow" nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="12">
+      <app-echart-speed [trainData]="trainData"></app-echart-speed>
+    </div>
+
+    <!-- 网压 -->
+    <div nz-col class="gutter-row" nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="12">
+      <app-echart-voltage [trainData]="trainData"></app-echart-voltage>
+    </div>
+  </div>
+</div>

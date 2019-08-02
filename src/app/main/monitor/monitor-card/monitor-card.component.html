@@ -1,0 +1,42 @@
+<div class="gutter-example">
+  <div nz-row nzGutter="16">
+    <div nz-col class="gutter-row" nzSpan="24">
+      <div class="gutter-box first-row text-left">
+        <img src="../../assets/images/icon_train_offline.png" *ngIf="item.level==-1" />
+        <img src="../../assets/images/icon_metro_blue.png" *ngIf="item.level==0">
+        <img src="../../assets/images/icon_metro_grade2.png" *ngIf="item.level==1">
+        <img src="../../assets/images/icon_metro_orange.png" *ngIf="item.level==2">
+        <img src="../../assets/images/icon_metro_grade0.png" *ngIf="item.level==3">
+        <span class="content train" (click)="toTrainDetail(item)">{{item.trainLocono}} 车</span>
+      </div>
+    </div>
+
+    <div nz-col class="gutter-row" nzSpan="12">
+      <div class="gutter-box">
+        <p class="title">里程</p>
+        <p class="content">{{item.mile}} km</p>
+      </div>
+    </div>
+
+    <div nz-col class="gutter-row" nzSpan="12">
+      <div class="gutter-box">
+        <p class="title">速度</p>
+        <p class="content">{{item.speed}} km/h</p>
+      </div>
+    </div>
+
+    <div nz-col class="gutter-row" nzSpan="12">
+      <div class="gutter-box">
+        <p class="title">网压</p>
+        <p class="content">{{item.voltage}} V</p>
+      </div>
+    </div>
+
+    <div nz-col class="gutter-row" nzSpan="12">
+      <div class="gutter-box">
+        <p class="title">能耗</p>
+        <p class="content">{{item.energy}} kWh</p>
+      </div>
+    </div>
+  </div>
+</div>

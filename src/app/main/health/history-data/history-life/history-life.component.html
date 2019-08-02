@@ -1,0 +1,36 @@
+<nz-card>
+  <!-- 面包屑导航 -->
+  <app-bread-nav [navlist]="navlist"></app-bread-nav>
+</nz-card>
+
+<!-- 表格 -->
+<nz-card class="mt">
+  <nz-table #basicTable nzBordered nzShowSizeChanger [nzFrontPagination]="false" [nzData]="tableData"
+    [nzLoading]="loading" [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize"
+    (nzPageIndexChange)="changePageIndex()" (nzPageSizeChange)="changePageSize()">
+    <thead>
+      <tr>
+        <th>车型</th>
+        <th>车号</th>
+        <th>车厢</th>
+        <th>设备名称</th>
+        <th>器件使用量</th>
+        <th>更新时间</th>
+        <th>寿命报警状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.trainType }}</td>
+        <td>{{ data.trainNo }}</td>
+        <td>{{ data.trainCoach }}</td>
+        <td>{{ data.partName }}</td>
+        <td>{{ data.usage }}</td>
+        <td>{{ data.serviceTime }}</td>
+        <td>
+          <nz-progress [nzPercent]="data.precent" nzSize="small"></nz-progress>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
