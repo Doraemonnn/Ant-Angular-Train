@@ -24,7 +24,7 @@
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
     "http-server": "^0.11.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng-zorro-antd": "^1.8.1",
     "ngx-echarts": "^4.2.1",
     "node-sass": "^4.12.0",
