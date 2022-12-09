@@ -23,7 +23,7 @@
     "angular2-websocket": "^0.9.8",
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
-    "http-server": "^0.11.1",
+    "http-server": "^0.11.2",
     "moment": "^2.24.0",
     "ng-zorro-antd": "^1.8.1",
     "ngx-echarts": "^4.2.1",
